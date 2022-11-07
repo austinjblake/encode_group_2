@@ -18,7 +18,7 @@ enter these commands in your terminal. press enter after each:
 
 #### If using NPM:
 
-- npm install
+- npm install --force
 - npx hardhat compile
 
 Project is now installed on your machine.
