@@ -1,7 +1,6 @@
 import { Ballot__factory } from "./../typechain-types/factories/Ballot__factory";
-import { ethers } from "hardhat";
+import { ethers } from "ethers";
 import { Ballot } from "../typechain-types";
-import { Wallet } from "ethers";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -13,7 +12,8 @@ function convertStringArrayToBytes32(array: string[]) {
   return bytes32Array;
 }
 
-export async function getSigner() {
+async function deploy() {
+  // use ethers to connect to goerli and wallet to create a signer
   const provider = ethers.getDefaultProvider("goerli", {
     alchemy: process.env.ALCHEMY_API_KEY,
   });
@@ -23,40 +23,25 @@ export async function getSigner() {
   console.log(
     `Working on Goerli Testnet connected to wallet ${signer.address} with balance of ${balance}`
   );
-  return signer as Wallet;
-}
-
-export async function getLocalSigner(accNum = 0) {
-  const accounts = await ethers.getSigners();
-  const signer = accounts[accNum];
-  const balance = await signer.getBalance();
-  console.log(
-    `Working on Local Blockchain connected to wallet ${signer.address} with balance of ${balance}`
-  );
-  return signer as unknown as Wallet;
-}
-
-export async function deploy(signer: Wallet, proposals: string[]) {
   console.log("Deploying Ballot contract");
   console.log("Proposals: ");
+  // proposals are passed as arguments when running script on command line
+  const proposals = process.argv.slice(2);
   proposals.forEach((element, index) => {
     console.log(`Proposal N. ${index + 1}: ${element}`);
   });
-  const ballotContractFacotry = new Ballot__factory(signer);
-  const ballotContract = (await ballotContractFacotry.deploy(
+  // get ballot factory and use it to deploy and instance of ballot contract
+  const ballotContractFactory = new Ballot__factory(signer);
+  const ballotContract = (await ballotContractFactory.deploy(
     convertStringArrayToBytes32(proposals)
   )) as Ballot;
   await ballotContract.deployed();
   console.log(
     `The ballot smart contract was deployed at ${ballotContract.address}`
   );
-  return ballotContract.address;
 }
 
-export const localDeploy = async (signer: Wallet) => {
-  const proposals = ["chocolate", "vanilla", "cookie", "lemon"];
-  return deploy(signer, proposals).catch((error) => {
-    console.error(error);
-    process.exitCode = 1;
-  });
-};
+deploy().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
