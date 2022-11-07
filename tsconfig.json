@@ -9,4 +9,7 @@
   },
   "include": ["./scripts", "./test", "./typechain-types"],
   "files": ["./hardhat.config.ts"],
+  "ts-node": {
+    "transpileOnly": true
+  }
 }
