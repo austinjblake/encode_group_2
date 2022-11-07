@@ -49,20 +49,21 @@ run the command in the terminal replacing CONTRACT_ADDRESS with the onchain ball
 
 - yarn run ts-node --files ./scripts/Delegate.ts CONTRACT_ADDRESS NEW_DELEGATE_ADDRESS
 
-Get Ballot Results
+### Get Ballot Results
 
 query the ballot contract to find out which proposal is winning and how many votes it has
 
 run the command in the terminal replacing CONTRACT_ADDRESS with ballot contract address on goerli network
 
-\*yarn run ts-node --files ./scripts/Results.ts CONTRACT_ADDRESS
+- yarn run ts-node --files ./scripts/Results.ts CONTRACT_ADDRESS
 
 ### Vote
 
 after your account/address has been given voting rights you may vote on a proposal
 
 run the command in the terminal replacing CONTRACT_ADDRESS with ballot contract address and VOTE with the index of the proposal you want to vote for(1, 2, 3...). Proposal Index is zero based so to vote for Proposal 1 you would pass in 0. Proposal2 can be voted for by passing in 1, etc
-\*yarn run ts-node --files ./scripts/Vote.ts CONTRACT_ADDRESS VOTE
+
+- yarn run ts-node --files ./scripts/Vote.ts CONTRACT_ADDRESS VOTE
 
 #### Notes
 
