@@ -20,7 +20,8 @@ MAKE SURE THIS ACCOUNT IS ONLY FOR CODING AND HAS NO REAL MONEY IN IT!!!!!!!!!!
 .env should also have "ALCHEMY_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
 now that you have your private key in .env open the .gitignore file and double check .env is listed in there so your key is not added to git changes
 
-Deployment
+### Deployment
+
 this step is not needed if interacting with a contract already on the blockchain
 
 if you want to deploy your own, enter the command below in the terminal and substitute the names of the proposals you want to use for PROPOSAL1, PROPOSAL 2...
@@ -28,7 +29,7 @@ if you want to deploy your own, enter the command below in the terminal and subs
 - yarn run ts-node --files ./scripts/Deployments.ts PROPOSAL1 PROPOSAL2 PROPOSAL3 PROPOSAL4
   after this is run the console will print out the address of the newly deployed contract. copy and keep this for future use
 
-Give Right To Vote
+### Give Right To Vote
 
 we need to give voting rights to an account before a vote transaction can be sent. rights can only be given by the person who deployed the contract
 
@@ -40,7 +41,7 @@ paste the command into the terminal. replace CONTRACT_ADDRESS with the address y
 
 - yarn run ts-node --files ./scripts/GiveRightToVote.ts CONTRACT_ADDRESS NEW_VOTER_ADDRESS
 
-Delegate Vote
+### Delegate Vote
 
 this will give your voting power to another address. for this to work, your address and the address you want to delegate to must both have been given permission to vote
 
@@ -56,12 +57,14 @@ run the command in the terminal replacing CONTRACT_ADDRESS with ballot contract 
 
 \*yarn run ts-node --files ./scripts/Results.ts CONTRACT_ADDRESS
 
-Vote
+### Vote
 
 after your account/address has been given voting rights you may vote on a proposal
 
 run the command in the terminal replacing CONTRACT_ADDRESS with ballot contract address and VOTE with the index of the proposal you want to vote for(1, 2, 3...). Proposal Index is zero based so to vote for Proposal 1 you would pass in 0. Proposal2 can be voted for by passing in 1, etc
 \*yarn run ts-node --files ./scripts/Vote.ts CONTRACT_ADDRESS VOTE
+
+#### Notes
 
 A ballot contract has already been deployed to goerli. The address is:
 0xCC7A912deeCD9633D5019e158c1e3a99e955CfD1
