@@ -14,48 +14,67 @@ Project is now installed on your machine.
 
 ".env" file is needed. create a new one or copy one from another lesson and paste it inside the ballot folder
 .env needs to have a "PRIVATE_KEY=xxxxxxxxxxxxxx" where private key is exported from your metamask
+
 MAKE SURE THIS ACCOUNT IS ONLY FOR CODING AND HAS NO REAL MONEY IN IT!!!!!!!!!!
+
 .env should also have "ALCHEMY_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
 now that you have your private key in .env open the .gitignore file and double check .env is listed in there so your key is not added to git changes
 
 Deployment
 this step is not needed if interacting with a contract already on the blockchain
+
 if you want to deploy your own, enter the command below in the terminal and substitute the names of the proposals you want to use for PROPOSAL1, PROPOSAL 2...
-yarn run ts-node --files ./scripts/Deployments.ts PROPOSAL1 PROPOSAL2 PROPOSAL3 PROPOSAL4
-after this is run the console will print out the address of the newly deployed contract. copy and keep this for future use
+
+- yarn run ts-node --files ./scripts/Deployments.ts PROPOSAL1 PROPOSAL2 PROPOSAL3 PROPOSAL4
+  after this is run the console will print out the address of the newly deployed contract. copy and keep this for future use
 
 Give Right To Vote
+
 we need to give voting rights to an account before a vote transaction can be sent. rights can only be given by the person who deployed the contract
+
 if you are interacting with an existing contract, send your address in a message to get it approved
+
 if you deployed your own contract you can use the command below to approve another address to vote
+
 paste the command into the terminal. replace CONTRACT_ADDRESS with the address you got from the deployment step. NEW_VOTER_ADDRESS is the wallet address you want to approve to vote
-yarn run ts-node --files ./scripts/GiveRightToVote.ts CONTRACT_ADDRESS NEW_VOTER_ADDRESS
+
+- yarn run ts-node --files ./scripts/GiveRightToVote.ts CONTRACT_ADDRESS NEW_VOTER_ADDRESS
 
 Delegate Vote
+
 this will give your voting power to another address. for this to work, your address and the address you want to delegate to must both have been given permission to vote
+
 run the command in the terminal replacing CONTRACT_ADDRESS with the onchain ballot address and NEW_DELEGATE_ADDRESS with the wallet address you want to give your voting power to
-yarn run ts-node --files ./scripts/Delegate.ts CONTRACT_ADDRESS NEW_DELEGATE_ADDRESS
+
+- yarn run ts-node --files ./scripts/Delegate.ts CONTRACT_ADDRESS NEW_DELEGATE_ADDRESS
 
 Get Ballot Results
+
 query the ballot contract to find out which proposal is winning and how many votes it has
+
 run the command in the terminal replacing CONTRACT_ADDRESS with ballot contract address on goerli network
-yarn run ts-node --files ./scripts/Results.ts CONTRACT_ADDRESS
+
+\*yarn run ts-node --files ./scripts/Results.ts CONTRACT_ADDRESS
 
 Vote
+
 after your account/address has been given voting rights you may vote on a proposal
+
 run the command in the terminal replacing CONTRACT_ADDRESS with ballot contract address and VOTE with the index of the proposal you want to vote for(1, 2, 3...). Proposal Index is zero based so to vote for Proposal 1 you would pass in 0. Proposal2 can be voted for by passing in 1, etc
-yarn run ts-node --files ./scripts/Vote.ts CONTRACT_ADDRESS VOTE
+\*yarn run ts-node --files ./scripts/Vote.ts CONTRACT_ADDRESS VOTE
 
 A ballot contract has already been deployed to goerli. The address is:
 0xCC7A912deeCD9633D5019e158c1e3a99e955CfD1
 
 It has Proposals:
-Proposal N. 1: Spring
-Proposal N. 2: Summer
-Proposal N. 3: Fall
-Proposal N. 4: Winter
+
+- Proposal N. 1: Spring
+- Proposal N. 2: Summer
+- Proposal N. 3: Fall
+- Proposal N. 4: Winter
 
 Feel free to interact with it using the contract address and the scripts above. Paste your wallet address in the chat and I will give you voting rights.
+
 If you want to try multiple accounts to vote more than once, or to try the delegate function then do the following:
 In your metamask, create a new account.
 AGAIN THIS ACCOUNT WILL ONLY BE FOR CODING AND SHOULD NEVER HAVE REAL FUNDS IN IT
