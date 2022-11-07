@@ -23,7 +23,7 @@ enter these commands in your terminal. press enter after each:
 
 Project is now installed on your machine.
 
-".env" file is needed. create a new one or copy one from another lesson and paste it inside the ballot folder
+".env" file is needed. create a new one or copy one from another lesson and paste it inside the encode_group_2 folder
 
 .env needs to have a "PRIVATE_KEY=xxxxxxxxxxxxxx" where private key is exported from your metamask
 
