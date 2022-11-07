@@ -8,8 +8,16 @@ enter these commands in your terminal. press enter after each:
 
 - git clone https://github.com/austinjblake/encode_group_2.git
 - cd ballot
+
+#### If using Yarn:
+
 - yarn
 - yarn hardhat compile
+
+#### If using NPM:
+
+- npm install
+- npx hardhat compile
 
 Project is now installed on your machine.
 
@@ -28,6 +36,10 @@ now that you have your private key in .env open the .gitignore file and double c
 "INFURA_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
 
 "ETHERSCAN_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
+
+## Scripts
+
+For the following command line scripts-if using Yarn, paste scripts as is. If using npm, replace "yarn run" with "npx"
 
 ### Deployment
 
