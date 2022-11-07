@@ -8,6 +8,8 @@ export async function getResults() {
   // use ethers to connect to goerli and wallet to create a signer
   const provider = ethers.getDefaultProvider("goerli", {
     alchemy: process.env.ALCHEMY_API_KEY,
+    infura: process.env.INFURA_API_KEY,
+    etherscan: process.env.ETHERSCAN_API_KEY,
   });
   const wallet = new ethers.Wallet(process.env.PRIVATE_KEY ?? "");
   const signer = wallet.connect(provider);

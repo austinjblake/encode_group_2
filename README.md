@@ -19,9 +19,15 @@ Project is now installed on your machine.
 
 MAKE SURE THIS ACCOUNT IS ONLY FOR CODING AND HAS NO REAL MONEY IN IT!!!!!!!!!!
 
-.env should also have "ALCHEMY_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
-
 now that you have your private key in .env open the .gitignore file and double check .env is listed in there so your key is not added to git changes
+
+.env can also have api keys to help prevent rate limiting. do one or all or none your script should still work
+
+"ALCHEMY_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
+
+"INFURA_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
+
+"ETHERSCAN_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
 
 ### Deployment
 
