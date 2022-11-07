@@ -1,6 +1,6 @@
 # ETHdenver Group Project #2
 
-# Setup
+## Setup
 
 create new folder "Project2"
 
