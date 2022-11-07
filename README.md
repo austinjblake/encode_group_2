@@ -9,7 +9,7 @@ open terminal inside "Project2"
 enter these commands in your terminal. press enter after each:
 
 - git clone https://github.com/austinjblake/encode_group_2.git
-- cd ballot
+- cd encode_group_2
 
 #### If using Yarn:
 
