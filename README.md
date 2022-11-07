@@ -1,5 +1,7 @@
 # ETHdenver Group Project #2
 
+# Setup
+
 create new folder "Project2"
 
 open terminal inside "Project2"
@@ -36,6 +38,8 @@ now that you have your private key in .env open the .gitignore file and double c
 "INFURA_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
 
 "ETHERSCAN_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
+
+#### Feel free here to try out "yarn hardhat test" or "npx hardhat test" to run the test suite. Not required
 
 ## Scripts
 
