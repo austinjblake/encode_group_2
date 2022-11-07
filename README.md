@@ -4,10 +4,11 @@ create new folder "Project2"
 open terminal inside "Project2"
 
 enter these commands in your terminal. press enter after each:
-git clone
-cd ballot
-yarn
-yarn hardhat compile
+
+- git clone https://github.com/austinjblake/encode_group_2.git
+- cd ballot
+- yarn
+- yarn hardhat compile
 
 Project is now installed on your machine.
 
