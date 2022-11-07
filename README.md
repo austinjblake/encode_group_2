@@ -35,11 +35,11 @@ now that you have your private key in .env open the .gitignore file and double c
 
 "ALCHEMY_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
 
-"INFURA_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
+"INFURA_API_KEY=xxxxxxxxxxxx" you can create an account on infura for free and create an api key to put here
 
-"ETHERSCAN_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
+"ETHERSCAN_API_KEY=xxxxxxxxxxxx" you can create an account on etherscan for free and create an api key to put here
 
-#### Feel free here to try out "yarn hardhat test" or "npx hardhat test" to run the test suite. Not required
+#### Feel free at this point to try out "yarn hardhat test" or "npx hardhat test" to run the test suite. Not required
 
 ## Scripts
 
@@ -87,7 +87,9 @@ run the command in the terminal replacing CONTRACT_ADDRESS with ballot contract 
 
 after your account/address has been given voting rights you may vote on a proposal
 
-run the command in the terminal replacing CONTRACT_ADDRESS with ballot contract address and VOTE with the index of the proposal you want to vote for(1, 2, 3...). Proposal Index is zero based so to vote for Proposal 1 you would pass in 0. Proposal2 can be voted for by passing in 1, etc
+run the command in the terminal replacing CONTRACT_ADDRESS with ballot contract address and VOTE with the index of the proposal you want to vote for(1, 2, 3...).
+
+Proposal Index is zero based so to vote for Proposal 1 you would pass in 0. Proposal2 can be voted for by passing in 1, etc
 
 - yarn run ts-node --files ./scripts/Vote.ts CONTRACT_ADDRESS VOTE
 
