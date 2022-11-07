@@ -1,6 +1,7 @@
 # ETHdenver Group Project #2
 
 create new folder "Project2"
+
 open terminal inside "Project2"
 
 enter these commands in your terminal. press enter after each:
@@ -13,11 +14,13 @@ enter these commands in your terminal. press enter after each:
 Project is now installed on your machine.
 
 ".env" file is needed. create a new one or copy one from another lesson and paste it inside the ballot folder
+
 .env needs to have a "PRIVATE_KEY=xxxxxxxxxxxxxx" where private key is exported from your metamask
 
 MAKE SURE THIS ACCOUNT IS ONLY FOR CODING AND HAS NO REAL MONEY IN IT!!!!!!!!!!
 
 .env should also have "ALCHEMY_API_KEY=xxxxxxxxxxxx" you can create an account on alchemy for free and create an api key to put here
+
 now that you have your private key in .env open the .gitignore file and double check .env is listed in there so your key is not added to git changes
 
 ### Deployment
@@ -27,7 +30,8 @@ this step is not needed if interacting with a contract already on the blockchain
 if you want to deploy your own, enter the command below in the terminal and substitute the names of the proposals you want to use for PROPOSAL1, PROPOSAL 2...
 
 - yarn run ts-node --files ./scripts/Deployments.ts PROPOSAL1 PROPOSAL2 PROPOSAL3 PROPOSAL4
-  after this is run the console will print out the address of the newly deployed contract. copy and keep this for future use
+
+after this is run the console will print out the address of the newly deployed contract. copy and keep this for future use
 
 ### Give Right To Vote
 
@@ -80,8 +84,13 @@ It has Proposals:
 Feel free to interact with it using the contract address and the scripts above. Paste your wallet address in the chat and I will give you voting rights.
 
 If you want to try multiple accounts to vote more than once, or to try the delegate function then do the following:
+
 In your metamask, create a new account.
+
 AGAIN THIS ACCOUNT WILL ONLY BE FOR CODING AND SHOULD NEVER HAVE REAL FUNDS IN IT
+
 That said, all of your accounts will need some goerli ether to use these scripts and interact with the contract
+
 Export the private key of your new account and paste that in your .env where the private key for your original account was
+
 You can do this to interact with the contract using multiple accounts(say if your first account is authorized to vote but you want to attempt to vote with a second account to see that the transaction will fail. or maybe you want to get 2 accounts able to vote then delegate the vote from account1 to account2)
